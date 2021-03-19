@@ -1,21 +1,8 @@
-import React, { useEffect } from "react"
-import { connect, sendMsg } from "./utils/socket"
+import React from "react"
+import ChatPage from "./components/ChatPage"
 
-
-const Application = () => {
-  useEffect(() => {
-    connect()
-  })
-
-  const handleSendMsg = msg => () => {
-    sendMsg(msg)
-  }
-
-  return (
-    <div>
-      <button onClick={handleSendMsg("abc")}>send message</button>
-    </div>
-  )
-}
+const Application = () => (
+  <ChatPage />
+)
 
 export default Application
