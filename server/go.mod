@@ -1,8 +1,5 @@
-module main
+module github.com/jakubson7/go-chat
 
 go 1.16
 
-require (
-	github.com/googollee/go-socket.io v1.4.4 // indirect
-	github.com/gorilla/websocket v1.4.2 // indirect
-)
+require github.com/gorilla/websocket v1.4.2 // indirect

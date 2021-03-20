@@ -1,16 +1,17 @@
 
-let socket = new WebSocket("ws://localhost:8080/ws");
+let socket = new WebSocket("ws://localhost:8080/chat/?room=test");
 
-export const connect = cb => {
+export const connect = (cb, user) => {
   console.log("Attempting Connection...")
 
   socket.onopen = () => {
     console.log("Successfully Connected")
+    //sendMsg(JSON.stringify(user))
   }
 
   socket.onmessage = msg => {
     console.log(msg)
-    cb(msg)
+    //cb(msg)
   }
 
   socket.onclose = event => {

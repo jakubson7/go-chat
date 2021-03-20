@@ -25,7 +25,11 @@ const ChatPage = () => {
   const [messages, setMessages] = useState([])
 
   useEffect(() => {
-    connect(handleReciveMsg)
+    connect(handleReciveMsg, {
+      ID: toString(Math.random()),
+      roomID: "0000",
+      name: "test",
+    })
   }, [])
 
   const handleReciveMsg = msg => setMessages(messages => [...messages, msg])
