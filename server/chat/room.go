@@ -1,6 +1,8 @@
 package chat
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type Room struct {
 	Join      chan *Client
@@ -25,20 +27,14 @@ func (room *Room) Listen() {
 			client.Room = room
 			room.Clients[client] = true
 			for c := range room.Clients {
-				c.Conn.WriteJSON(Message{Type: 1, Body: `{
-					"event": "user-join",
-					"msg": "new user has joined the chat"
-				}`})
+				c.Conn.WriteJSON(NewMessage(client.Name, "user-join", "new user has joined the chat"))
 			}
 			break
 
 		case client := <-room.Leave:
 			delete(room.Clients, client)
 			for c := range room.Clients {
-				c.Conn.WriteJSON(Message{Type: 1, Body: `{
-					"event": "user-leave",
-					"msg": "user has left the chat"
-				}`})
+				c.Conn.WriteJSON(NewMessage(client.Name, "user-leave", "user has left the chat"))
 			}
 			break
 
