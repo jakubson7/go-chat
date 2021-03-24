@@ -1,8 +1,8 @@
 import React from "react"
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC = () => (
   <main>
-    <h1>404 - ooops you are lost ;(</h1>
+
   </main>
 )
 

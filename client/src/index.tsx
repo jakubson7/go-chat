@@ -3,9 +3,11 @@ import ReactDOM from "react-dom"
 import Application from "./Application"
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration"
 
+import "./index.css"
+
 ReactDOM.render(
   <Application />,
-  document.getElementById("root"),
+  document.getElementById("application")
 )
 
 serviceWorkerRegistration.register()
