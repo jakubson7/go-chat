@@ -19,8 +19,8 @@ type MessageBody struct {
 func NewMessage(userName string, event string, msg string) Message {
 	body, err := json.Marshal(MessageBody{
 		User:  userName,
-		Event: "user-join",
-		Msg:   "new user has joined the chat",
+		Event: event,
+		Msg:   msg,
 	})
 
 	if err != nil {

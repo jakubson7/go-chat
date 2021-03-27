@@ -7,7 +7,7 @@ import "./index.css"
 
 ReactDOM.render(
   <Application />,
-  document.getElementById("application")
+  document.querySelector("#application")
 )
 
 serviceWorkerRegistration.register()

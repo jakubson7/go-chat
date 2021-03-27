@@ -1,0 +1,6 @@
+{
+  "prettier.configPath": "client/.prettierrc.json",
+  "prettier.requireConfig": true,
+  "prettier.resolveGlobalModules": true,
+  "prettier.requirePragma": true
+}
